@@ -1,0 +1,7 @@
+{
+  "name": "habitual",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
