@@ -10,7 +10,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { home, checkboxOutline, person } from 'ionicons/icons';
+import { home, checkboxOutline, person, settings } from 'ionicons/icons';
 import Home from './pages/Home';
 import Habits from './pages/Habits';
 import Profile from './pages/Profile';
@@ -44,6 +44,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Settings from './pages/Settings';
 
 setupIonicReact();
 
@@ -58,8 +59,11 @@ const App: React.FC = () => (
           <Route exact path="/habits">
             <Habits />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <Profile />
+          </Route>
+          <Route exact path="/settings">
+            <Settings />
           </Route>
           <Route exact path="/">
             <Redirect to="/home" />
@@ -77,6 +81,10 @@ const App: React.FC = () => (
           <IonTabButton tab="profile" href="/profile">
             <IonIcon aria-hidden="true" icon={person} />
             <IonLabel>Profile</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="settings" href="/settings">
+            <IonIcon aria-hidden="true" icon={settings} />
+            <IonLabel>Settings</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
